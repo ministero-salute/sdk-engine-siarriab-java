@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<header>siar/header.mustache</header>
+	<footer>siar/footer.mustache</footer>
+	<node>
+		<openTemplate>siar/open_test.mustache</openTemplate>
+		<closeTemplate>siar/close_test.mustache</closeTemplate>
+		<node>
+			<openTemplate>siar/open_node_assistenza.mustache</openTemplate>
+			<comparingKeys>tipo</comparingKeys>
+		</node>
+
+	</node>
+</template>

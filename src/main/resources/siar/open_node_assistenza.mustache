@@ -1,0 +1,53 @@
+		<Trasmissione tipo="{{tipo}}"/>
+		<Erogatore>
+			<CodiceRegione>{{reg_erog}}</CodiceRegione>
+			<CodiceASL>{{as_erog}}</CodiceASL>
+			<StrutturaErogatrice>{{strut_erog}}</StrutturaErogatrice>
+		</Erogatore>
+		
+		<Eventi>
+			<PresaInCarico Data="{{data_pic}}">
+				<Id_Rec>{{id_rec}}</Id_Rec>
+			</PresaInCarico>
+			<Rivalutazione Data="{{data_valut_finale}}" MotivoValutazione="{{motivo_valut}}" ConfermaPrecedente="{{conf_valut_prec}}">
+				<Valutazione>
+					<Patologia>
+						<Principale>{{pat_princ}}</Principale>
+						<Concomitante>{{pat_conc}}</Concomitante>
+					</Patologia>
+					<EventualiTrattamenti>{{tratt_socioriab}}</EventualiTrattamenti>
+					<Autonomia>{{liv_auton}}</Autonomia>
+					<GradoMobilita>{{grado_mob}}</GradoMobilita>
+					<AreaSensoriale>{{area_sens}}</AreaSensoriale>
+					<BisognoInternistico>{{bis_intern}}</BisognoInternistico>
+					<StabilitaClinica>{{stab_clin}}</StabilitaClinica>
+					<SupportoCareGiver>{{pres_careg}}</SupportoCareGiver>
+					<SupportoSociale>{{supp_soc}}</SupportoSociale>
+					<UtilizzoDispositivi>{{util_dpo}}</UtilizzoDispositivi>
+					<Disturbi>
+						<Cognitivi>{{dist_cogn}}</Cognitivi>
+						<Comportamentali>{{dist_comp}}</Comportamentali>
+						<Comunicazione>{{comunic}}</Comunicazione>
+					</Disturbi>
+				</Valutazione>
+			</Rivalutazione>
+
+			<Trattamento DataInizioTrat="{{data_tratt_ini}}" DataFineTrat="{{data_tratt_fine}}">
+				<DurataCompTrat>{{durata_tratt_tot}}</DurataCompTrat>
+				<DurataMedTrat>{{durata_tratt_gg}}</DurataMedTrat>
+			</Trattamento>
+			
+			<Sospensione DataInizio="{{data_sosp_ini}}" DataFine="{{data_sosp_fine}}">
+				<Motivazione>{{motivo_sosp}}</Motivazione>
+			</Sospensione>
+			
+			<Conclusione DataRiunioneFinale="{{data_riun_finale}}" DataConclusione="{{data_conclus}}">
+				<Motivazione>{{mod_conclus}}</Motivazione>
+				<EsitoRilevazioneDis1>{{esito_ril_disab1}}</EsitoRilevazioneDis1>
+				<EsitoRilevazioneDis2>{{esito_ril_disab2}}</EsitoRilevazioneDis2>
+				<EsitoRilevazioneDis3>{{esito_ril_disab3}}</EsitoRilevazioneDis3>
+				<EsitoRilevazioneDis4>{{esito_ril_disab4}}</EsitoRilevazioneDis4>
+				<EsitoRilevazioneDis5>{{esito_ril_disab5}}</EsitoRilevazioneDis5>
+				<EsitoRilevazioneDis6>{{esito_ril_disab6}}</EsitoRilevazioneDis6>
+			</Conclusione>
+		</Eventi>

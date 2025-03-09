@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlsSiar_2 xsi:schemaLocation="http://flussi.mds.it/FlsSiar_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://flussi.mds.it/FlsSiar_2">
+	<Assistenza>
+		<Trasmissione tipo="I"/>
+		<Erogatore>
+			<CodiceRegione>010</CodiceRegione>
+			<CodiceASL>301</CodiceASL>
+			<StrutturaErogatrice>10</StrutturaErogatrice>
+		</Erogatore>
+		<Eventi>
+			<PresaInCarico data="2023-01-01">
+				<Id_Rec>cV9L4KoomhLHbZiyC3tPmT9iAkFQ4pmeN8dyGjAklPw=oF6LbMQkSr1ou/A3GCquNuTtlEwzn9N6fbsREq90rB4=</Id_Rec>
+			</PresaInCarico>
+			<Rivalutazione Data="2023-02-21" MotivoValutazione="1" ConfermaPrecedente="2">
+				<Valutazione>
+					<Patologia>
+						<Principale>01010</Principale>
+						<Concomitante>12345</Concomitante>
+					</Patologia>
+					<EventualiTrattamenti>2</EventualiTrattamenti>
+					<Autonomia>1</Autonomia>
+					<GradoMobilita>1</GradoMobilita>
+					<AreaSensoriale>1</AreaSensoriale>
+					<BisognoInternistico>1</BisognoInternistico>
+					<StabilitaClinica>1</StabilitaClinica>
+					<SupportoCareGiver>1</SupportoCareGiver>
+					<SupportoSociale>1</SupportoSociale>
+					<UtilizzoDispositivi>1</UtilizzoDispositivi>
+					<Disturbi>
+						<Cognitivi>1</Cognitivi>
+						<Comportamentali>1</Comportamentali>
+						<Comunicazione>1</Comunicazione>
+					</Disturbi>
+				</Valutazione>
+			</Rivalutazione>
+			<Trattamento DataInizioTrat="2023-02-21" DataFineTrat="2023-02-25">
+				<DurataCompTrat>546</DurataCompTrat>
+				<DurataMedTrat>12.5</DurataMedTrat>
+			</Trattamento>
+			<Sospensione DataInizio="2023-03-01" DataFine="2023-03-10">
+				<Motivazione>1</Motivazione>
+			</Sospensione>
+			<Conclusione DataRiunioneFinale="2023-03-15" DataConclusione="2023-03-15">
+				<Motivazione>3</Motivazione>
+				<EsitoRilevazioneDis1>2</EsitoRilevazioneDis1>
+				<EsitoRilevazioneDis2>3</EsitoRilevazioneDis2>
+				<EsitoRilevazioneDis3>4</EsitoRilevazioneDis3>
+				<EsitoRilevazioneDis4>3</EsitoRilevazioneDis4>
+				<EsitoRilevazioneDis5>b1</EsitoRilevazioneDis5>
+				<EsitoRilevazioneDis6>1</EsitoRilevazioneDis6>
+			</Conclusione>
+		</Eventi>
+	</Assistenza>
+</FlsSiar_2>
