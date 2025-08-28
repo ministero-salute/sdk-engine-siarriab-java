@@ -1,0 +1,278 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://flussi.mds.it/FlsSiar_2" xmlns:fls="http://flussi.mds.it/FlsSiar_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="tipoTrasmissione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[IVC]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="regioneErogazione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="010"/>
+			<xs:pattern value="020"/>
+			<xs:pattern value="030"/>
+			<xs:pattern value="041"/>
+			<xs:pattern value="042"/>
+			<xs:pattern value="050"/>
+			<xs:pattern value="060"/>
+			<xs:pattern value="070"/>
+			<xs:pattern value="080"/>
+			<xs:pattern value="090"/>
+			<xs:pattern value="100"/>
+			<xs:pattern value="110"/>
+			<xs:pattern value="120"/>
+			<xs:pattern value="130"/>
+			<xs:pattern value="140"/>
+			<xs:pattern value="150"/>
+			<xs:pattern value="160"/>
+			<xs:pattern value="170"/>
+			<xs:pattern value="180"/>
+			<xs:pattern value="190"/>
+			<xs:pattern value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="codASL">
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="strutturaErogatrice">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Id_Rec">
+		<xs:restriction base="xs:string">
+			<xs:length value="88"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="motivoRivalutazione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-2]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="confermaPrecedente">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-2]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="patologia">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{5}|99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="autonomia">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-3]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gradoMobilita">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-5]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="areaSensoriale">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-3]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bisognoAssistenziale">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-8]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="stabilitaClinica">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-6]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="esito">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="disturbo">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-3]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bisogno">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-2]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="supportoSociale">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-3]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="durataComplessiva">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9]{1}|[10-99]{2}|[100-999]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="durataMedia">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0.5"/>
+			<xs:maxInclusive value="24"/>
+			<xs:fractionDigits value="1"/>
+			<xs:pattern value="\d+(\.5)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eventualiTrattamenti">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-2]{1}"/>
+			<xs:pattern value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="motivazioneSospensione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-3]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="modalitaConclusione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9]{1}"/>
+			<xs:pattern value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataRiunioneFinale">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"/>
+			<xs:pattern value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Trasmissione">
+		<xs:complexType>
+			<xs:attribute name="tipo" type="fls:tipoTrasmissione" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Erogatore">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodiceRegione" type="fls:regioneErogazione"/>
+				<xs:element name="CodiceASL" type="fls:codASL"/>
+				<xs:element name="StrutturaErogatrice" type="fls:strutturaErogatrice"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PresaInCarico">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Id_Rec" type="fls:Id_Rec"/>
+			</xs:sequence>
+			<xs:attribute name="data" type="xs:date" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Rivalutazione">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="fls:Valutazione"/>
+			</xs:sequence>
+			<xs:attribute name="Data" type="xs:date" use="required"/>
+			<xs:attribute name="MotivoValutazione" type="fls:motivoRivalutazione" use="required"/>
+			<xs:attribute name="ConfermaPrecedente" type="fls:confermaPrecedente" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Patologia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Prevalente" type="fls:patologia"/>
+				<xs:element minOccurs="0" name="Concomitante" type="fls:patologia"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Disturbi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Cognitivi" type="fls:disturbo"/>
+				<xs:element name="Comportamentali" type="fls:disturbo"/>
+				<xs:element name="Comunicazione" type="fls:disturbo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Valutazione">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="fls:Patologia"/>
+				<xs:element name="EventualiTrattamenti" type="fls:eventualiTrattamenti"/>
+				<xs:element name="Autonomia" type="fls:autonomia"/>
+				<xs:element name="GradoMobilita" type="fls:gradoMobilita"/>
+				<xs:element name="AreaSensoriale" type="fls:areaSensoriale"/>
+				<xs:element name="BisognoInternistico" type="fls:bisognoAssistenziale"/>
+				<xs:element name="StabilitaClinica" type="fls:stabilitaClinica"/>
+				<xs:element minOccurs="0" name="SupportoCareGiver" type="fls:bisogno"/>
+				<xs:element name="SupportoSociale" type="fls:supportoSociale"/>
+				<xs:element minOccurs="0" name="UtilizzoDispositivi" type="fls:bisogno"/>
+				<xs:element ref="fls:Disturbi"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Trattamento">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DurataCompTrat" type="fls:durataComplessiva"/>
+				<xs:element name="DurataMedTrat" type="fls:durataMedia"/>
+			</xs:sequence>
+			<xs:attribute name="DataInizioTrat" type="xs:date" use="required"/>
+			<xs:attribute name="DataFineTrat" type="xs:date" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Sospensione">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Motivazione" type="fls:motivazioneSospensione"/>
+			</xs:sequence>
+			<xs:attribute name="DataInizio" type="xs:date" use="required"/>
+			<xs:attribute name="DataFine" type="xs:date" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Conclusione">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Motivazione" type="fls:modalitaConclusione"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis1" type="fls:esito"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis2" type="fls:esito"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis3" type="fls:esito"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis4" type="fls:esito"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis5" type="fls:esito"/>
+				<xs:element minOccurs="0" name="EsitoRilevazioneDis6" type="fls:esito"/>
+			</xs:sequence>
+			<xs:attribute name="DataRiunioneFinale" type="fls:DataRiunioneFinale" use="required"/>
+			<xs:attribute name="DataConclusione" type="xs:date" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Flusso2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="fls:Assistenza"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Assistenza">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fls:Trasmissione"/>
+				<xs:element ref="fls:Erogatore"/>
+				<xs:element ref="fls:Eventi"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Eventi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fls:PresaInCarico"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="fls:Rivalutazione"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="fls:Trattamento"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="fls:Sospensione"/>
+				<xs:element minOccurs="0" ref="fls:Conclusione"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
