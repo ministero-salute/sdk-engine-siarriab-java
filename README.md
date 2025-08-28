@@ -113,5 +113,8 @@ I contributi sono benvenuti. Si prega di consultare il file [`CONTRIBUTING.md`](
 
 Per ulteriori informazioni, contattare:
 
-- **Service Desk - Ministero della Salute**: [Service Desk](servicedesk.mds@medilifegroupspa.com)
+- **Service Desk - Ministero della Salute**: servicedesk.mds@medilifegroupspa.com
 - **Amministrazione titolare**: [Ministero della Salute](https://www.salute.gov.it)
+- 
+## mantainer:
+ Accenture SpA until January 2026
